@@ -1,52 +1,23 @@
-/* Fond ciel doux dégradé */
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  background: linear-gradient(to bottom, #87CEFA, #ffffff); /* ciel vers blanc */
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>École Kayon</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>ÉCOLE KAYON</h1>
+    <p>Bienvenue dans l’univers vibrant de l’école</p>
+    <button onclick="entrer()">ENTRER</button>
+  </div>
 
-/* Conteneur du message */
-.container {
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  padding: 30px 40px;
-  text-align: center;
-}
-
-/* Titre de l’école */
-.container h1 {
-  margin: 0;
-  font-size: 24px;
-  color: #2c3e50;
-}
-
-/* Sous-texte */
-.container p {
-  margin: 10px 0 20px;
-  color: #555;
-  font-size: 16px;
-}
-
-/* Bouton entrer */
-.container button {
-  background-color: #e67e22;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.container button:hover {
-  background-color: #d35400;
-}
+  <script>
+    function entrer() {
+      // Ici tu peux rediriger vers une autre page plus tard
+      alert("Bienvenue à l’École Kayon !");
+    }
+  </script>
+</body>
+</html>
