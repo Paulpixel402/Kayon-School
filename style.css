@@ -1,120 +1,79 @@
-/* Appliquer une base propre */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
+body, html {
   height: 100%;
   width: 100%;
-  font-family: 'Arial', sans-serif;
   overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-body {
-  background-image: url('https://i.imgur.com/sH7xkL7.jpg');
+.background {
+  background-image: url("Kayon_school_bg.jpg"); /* ici c’est le bon nom */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
-/* Effet nuage animé */
-body::before {
-  content: '';
-  background-image: url('https://i.imgur.com/YkzjDka.png');
-  background-size: contain;
-  background-repeat: repeat-x;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 300%;
-  height: 100%;
-  animation: cloudMove 60s linear infinite;
-  z-index: 0;
-  opacity: 0.3;
-}
-
-/* Animation nuages */
-@keyframes cloudMove {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.container {
+.overlay {
   text-align: center;
   color: white;
-  z-index: 1;
-  animation: fadeIn 3s ease-in-out;
+  background-color: rgba(0,0,0,0.25);
+  padding: 20px 40px;
+  border-radius: 20px;
+  animation: fadeIn 2s ease;
 }
 
-h1 {
+.title {
   font-size: 3em;
-  text-shadow: 2px 2px 4px #000;
-  animation: floatText 2.5s ease-in-out infinite alternate;
+  color: #FFA500;
+  animation: floatTitle 3s ease-in-out infinite;
 }
 
-p {
-  font-size: 1.3em;
+.subtitle {
   margin-top: 10px;
-  text-shadow: 1px 1px 3px #000;
-  animation: fadeInUp 2s ease-in-out;
+  font-size: 1.2em;
+  animation: fadeIn 2.5s ease;
 }
 
-/* Bouton animé */
-button {
+.enter-button {
   margin-top: 30px;
-  padding: 20px 60px;
-  font-size: 1.8em;
-  background-color: #ffffffcc;
+  padding: 15px 30px;
+  font-size: 1.5em;
   border: none;
-  border-radius: 12px;
+  border-radius: 15px;
+  background-color: #fff;
+  color: #000;
   cursor: pointer;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
-  animation: pulse 2s infinite;
+  animation: pulse 2s infinite ease-in-out;
 }
 
-button:hover {
-  transform: scale(1.05);
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes floatText {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
+.enter-button:hover {
+  transform: scale(1.1);
 }
 
 @keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.08);
-  }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
+@keyframes floatTitle {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
 
-
-
-
-
-
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
