@@ -48,3 +48,12 @@ p {
     from { background-position: 0 0; }
     to { background-position: 2000px 0; }
 }
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("Kayon_school_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
