@@ -1,49 +1,182 @@
-body {
+/* Reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+/* Fond du ciel */
+.sky {
+  background: linear-gradient(to bottom, #88d4f9, #e6f0ff);
   height: 100vh;
-  background: linear-gradient(180deg, #3CE2FA, #AEE8FF, #ffffff);
-  background-size: 400% 400%;
-  animation: skyGradient 12s ease infinite;
-  font-family: 'Arial', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soleil derrière les nuages */
+.sun {
+  position: absolute;
+  top: 50px;
+  left: 60%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #ffeb3b, #fbc02d);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: sunPulse 20s infinite ease-in-out;
+  z-index: 1;
+}
+
+/* Animation soleil */
+@keyframes sunPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.75;
+  }
+}
+
+/* Nuages */
+.cloud {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.cloud1 {
+  width: 180px;
+  height: 60px;
+  top: 80px;
+  left: -200px;
+  animation: moveCloud 50s linear infinite;
+}
+
+.cloud2 {
+  width: 120px;
+  height: 40px;
+  top: 150px;
+  left: -150px;
+  animation: moveCloud 60s linear infinite;
+}
+
+.cloud3 {
+  width: 140px;
+  height: 50px;
+  top: 220px;
+  left: -180px;
+  animation: moveCloud 70s linear infinite;
+}
+
+@keyframes moveCloud {
+  0% { left: -200px; }
+  100% { left: 120%; }
+}
+
+/* Oiseaux Naruto style */
+.bird {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: black;
+  clip-path: polygon(0% 50%, 50% 0%, 100% 50%, 50% 100%);
+  opacity: 0.7;
+  animation: flap 1s infinite alternate;
+}
+
+.bird1 {
+  top: 120px;
+  left: -50px;
+  animation: flyBird1 25s linear infinite;
+}
+.bird2 {
+  top: 180px;
+  left: -70px;
+  animation: flyBird2 30s linear infinite;
+}
+.bird3 {
+  top: 220px;
+  left: -60px;
+  animation: flyBird3 35s linear infinite;
+}
+
+@keyframes flyBird1 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(130vw); }
+}
+@keyframes flyBird2 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(120vw); }
+}
+@keyframes flyBird3 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(110vw); }
+}
+
+@keyframes flap {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(20deg); }
+}
+
+/* Texte central */
+.centered {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
+  z-index: 10;
 }
 
-/* Animation du fond "ciel qui respire" */
-@keyframes skyGradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-h1 {
-  font-size: 32px;
+.centered h1 {
+  font-size: 2em;
   color: #222;
-  margin-bottom: 10px;
 }
 
-p {
-  font-size: 18px;
+.centered span {
+  font-size: 0.9em;
   color: #444;
-  margin-bottom: 20px;
 }
 
-.container button {
-  background-color: #6e7c22;
-  color: white;
+.centered button {
+  margin-top: 15px;
+  padding: 10px 25px;
   border: none;
-  padding: 12px 24px;
-  font-size: 16px;
+  background: #ff5e5e;
+  color: white;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
 }
 
-.container button:hover {
-  background-color: #899d33;
+.centered button:hover {
+  transform: scale(1.05);
 }
+
+/* Bâtiment en fond (placeholder) */
+.building {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 250px;
+  background: linear-gradient(to top, #aaa, #ccc);
+  border-radius: 15px 15px 0 0;
+  opacity: 0.6;
+  z-index: 0;
+}
+
 
