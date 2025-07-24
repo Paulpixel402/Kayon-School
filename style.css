@@ -1,110 +1,164 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(to top, #aee1f9 0%, #87ceeb 100%);
   font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to top, #b3e5fc, #81d4fa);
   overflow-x: hidden;
 }
 
-/* Nuages cartoon type "barbe" */
-.cloud {
-  position: absolute;
-  background: #ffffff;
-  border-radius: 50%;
-  box-shadow: 40px 10px 0 #ffffff, 80px 20px 0 #ffffff;
-  opacity: 0.8;
-  animation: floatClouds 60s linear infinite;
-}
-@keyframes floatClouds {
-  0% { transform: translateX(0) scale(1); }
-  100% { transform: translateX(200px) scale(1); }
+.sky {
+  position: relative;
+  height: 60vh;
+  background: linear-gradient(to top, #81d4fa, #4fc3f7);
+  overflow: hidden;
 }
 
-/* Soleil organique doux */
 .sun {
   width: 80px;
   height: 80px;
-  background: radial-gradient(circle at 30% 30%, #ffe066, #f9c74f);
+  background: radial-gradient(circle at center, #FFD700, #FFB300);
   border-radius: 50%;
   position: absolute;
-  top: 100px;
+  top: 40px;
   left: 50%;
   transform: translateX(-50%);
-  box-shadow: 0 0 60px 20px rgba(255, 223, 0, 0.3);
-  animation: sunPulse 5s ease-in-out infinite;
-}
-@keyframes sunPulse {
-  0%, 100% { box-shadow: 0 0 60px 20px rgba(255, 223, 0, 0.3); }
-  50% { box-shadow: 0 0 80px 30px rgba(255, 223, 0, 0.5); }
+  box-shadow: 0 0 40px rgba(255, 193, 7, 0.6);
 }
 
-/* Titre */
-h1 {
+.cloud {
+  width: 100px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50px;
+  position: absolute;
+  opacity: 0.9;
+  filter: blur(1px);
+}
+
+.cloud1 { top: 50px; left: 20%; }
+.cloud2 { top: 100px; left: 60%; }
+.cloud3 { top: 70px; left: 80%; }
+
+.birds {
+  position: absolute;
+  top: 20px;
+  left: 10%;
+}
+
+.bird {
+  width: 30px;
+  height: 15px;
+  background: transparent;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  transform: rotate(-45deg);
+  margin: 0 8px;
+  display: inline-block;
+}
+
+.title {
   text-align: center;
-  font-size: 3em;
+  font-size: 2.5rem;
   color: #333;
-  margin-top: 200px;
-  text-shadow: 1px 1px 2px #fff;
+  margin-top: 160px;
+  text-shadow: 2px 2px 5px rgba(255,255,255,0.6);
 }
 
-/* Bâtiment réaliste style My Hero Academia */
-.building {
-  width: 300px;
-  height: 350px;
-  margin: 100px auto;
-  background: repeating-linear-gradient(
-    90deg,
-    #d9d9d9,
-    #d9d9d9 10px,
-    #c0c0c0 10px,
-    #c0c0c0 20px
-  );
-  border: 4px solid #999;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+.scene {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 30vh;
   position: relative;
 }
 
-/* Colonnes verticales */
-.building::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 20px;
-  width: 8px;
-  height: 100%;
-  background-color: #aaa;
-  box-shadow: 60px 0 #aaa, 120px 0 #aaa, 180px 0 #aaa, 240px 0 #aaa;
+.ground {
+  height: 10vh;
+  background: linear-gradient(to top, #4caf50, #81c784);
+  border-top: 4px solid #33691e;
 }
 
-/* Fenêtres */
+.building {
+  width: 200px;
+  height: 250px;
+  background: repeating-linear-gradient(
+    90deg,
+    #d7ccc8,
+    #d7ccc8 10px,
+    #bcaaa4 10px,
+    #bcaaa4 20px
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  border: 2px solid #795548;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+}
+
+.column {
+  width: 100%;
+  height: 5px;
+  background-color: #a1887f;
+}
+
+.windows-row {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 10px 0;
+}
+
 .window {
   width: 30px;
   height: 30px;
-  background: #add8e6;
-  border: 2px solid #333;
-  position: absolute;
+  background-color: #90caf9;
+  border: 2px solid #64b5f6;
+  box-shadow: inset 0 0 5px rgba(255,255,255,0.5);
 }
-.window:nth-child(1) { top: 40px; left: 30px; }
-.window:nth-child(2) { top: 40px; left: 100px; }
-.window:nth-child(3) { top: 40px; left: 170px; }
-.window:nth-child(4) { top: 90px; left: 30px; }
-.window:nth-child(5) { top: 90px; left: 100px; }
-.window:nth-child(6) { top: 90px; left: 170px; }
 
-/* Bouton "ENTRER" */
-.enter-button {
-  display: block;
-  margin: 40px auto 0;
-  padding: 15px 30px;
-  font-size: 1.2em;
-  background-color: #004aad;
+.tree {
+  width: 60px;
+  height: 100px;
+  background: #8d6e63;
+  position: relative;
+  margin: 0 30px;
+}
+
+.tree::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: -20px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle at center, #f48fb1 20%, #ec407a 60%);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(244,143,177,0.5);
+}
+
+.tree-left { margin-right: auto; }
+.tree-right { margin-left: auto; }
+
+.enter-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.enter-btn {
+  background-color: #2196f3;
   color: white;
   border: none;
-  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: background 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s;
 }
-.enter-button:hover {
-  background-color: #002e7a;
+
+.enter-btn:hover {
+  background-color: #1976d2;
 }
