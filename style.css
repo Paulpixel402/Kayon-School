@@ -1,20 +1,128 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>École Kayon</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="arrière-plan">
-      <div class="recouvrir">
-        <h1>ÉCOLE KAYON</h1>
-        <p class="sous-titre">Bienvenue dans l'univers vibrant de l'école</p>
-        <button class="bouton">ENTRER</button>
-      </div>
-    </div>
-  </body>
-</html>
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Fond ciel animé */
+.sky {
+  background: linear-gradient(#74c0fc, #d0ebff);
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Nuages animés */
+.cloud {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: floatClouds 60s linear infinite;
+}
+
+.cloud1 {
+  width: 200px;
+  height: 60px;
+  top: 50px;
+  left: -250px;
+  animation-delay: 0s;
+}
+
+.cloud2 {
+  width: 150px;
+  height: 50px;
+  top: 120px;
+  left: -200px;
+  animation-delay: 20s;
+}
+
+.cloud3 {
+  width: 180px;
+  height: 55px;
+  top: 200px;
+  left: -230px;
+  animation-delay: 40s;
+}
+
+@keyframes floatClouds {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(140vw); }
+}
+
+/* École stylisée */
+.school {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+}
+
+.roof {
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 40px solid #c77d30;
+}
+
+.wall {
+  width: 120px;
+  height: 80px;
+  background: #fff4e6;
+  border: 2px solid #a0522d;
+}
+
+/* Carte texte */
+.card {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.card h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+.card p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Bouton animé */
+.enter-button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  font-size: 16px;
+  color: white;
+  background: #d97706;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
 
   
