@@ -1,51 +1,20 @@
-/* Fond avec l'image */
-.arrière-plan {
-  background-image: url("Kayon_school_bg.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>École Kayon</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="arrière-plan">
+      <div class="recouvrir">
+        <h1>ÉCOLE KAYON</h1>
+        <p class="sous-titre">Bienvenue dans l'univers vibrant de l'école</p>
+        <button class="bouton">ENTRER</button>
+      </div>
+    </div>
+  </body>
+</html>
 
-/* Bloc central */
-.recouvrir {
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 40px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Titre principal */
-h1 {
-  font-size: 2.5em;
-  color: #222;
-  margin-bottom: 10px;
-}
-
-/* Sous-titre */
-.sous-titre {
-  font-size: 1.2em;
-  color: #555;
-  margin-bottom: 30px;
-}
-
-/* Bouton */
-.bouton {
-  background-color: #ff9900;
-  color: white;
-  font-size: 1.1em;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s, background-color 0.3s;
-}
-
-.bouton:hover {
-  background-color: #e68500;
-  transform: scale(1.05);
-}
-
+  
