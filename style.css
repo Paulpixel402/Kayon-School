@@ -1,57 +1,49 @@
-/* RESET */
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-/* FOND DYNAMIQUE CIEL BLEU VERS BLANC */
-body {
   height: 100vh;
-  background: linear-gradient(to bottom, #3CE2FA, #FFFFFF);
+  background: linear-gradient(180deg, #3CE2FA, #AEE8FF, #ffffff);
+  background-size: 400% 400%;
+  animation: skyGradient 12s ease infinite;
   font-family: 'Arial', sans-serif;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-/* CONTAINER CENTRAL */
-.container {
   text-align: center;
-  padding: 40px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* TITRE */
-.container h1 {
-  font-size: 48px;
-  color: #ffffff;
+/* Animation du fond "ciel qui respire" */
+@keyframes skyGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+h1 {
+  font-size: 32px;
+  color: #222;
   margin-bottom: 10px;
-  letter-spacing: 2px;
 }
 
-/* PARAGRAPHE */
-.container p {
+p {
   font-size: 18px;
-  color: #f0f0f0;
-  margin-bottom: 30px;
+  color: #444;
+  margin-bottom: 20px;
 }
 
-/* BOUTON */
 .container button {
-  background-color: #e6722a;
+  background-color: #6e7c22;
   color: white;
   border: none;
   padding: 12px 24px;
   font-size: 16px;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .container button:hover {
-  background-color: #cf5e1c;
+  background-color: #899d33;
 }
+
