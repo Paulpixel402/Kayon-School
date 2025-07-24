@@ -1,77 +1,44 @@
-/* RESET */
-* {
+/* S'assurer que tout prend 100% de la page */
+html, body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-/* FOND GÉNÉRAL */
-body {
-  height: 100vh;
-  background: linear-gradient(to right, #a0c4ff, #bdb2ff);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100%;
+  width: 100%;
+  font-family: 'Arial', sans-serif;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
 }
 
-/* NUAGE ANIMÉ */
+/* Fond plein écran */
 .fond-nuage {
+  background-image: url('Kayon_school_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: absolute;
   top: 0;
   left: 0;
-  width: 300%;
   height: 100%;
-  background: url('https://www.transparenttextures.com/patterns/cloudy-day.png');
-  background-repeat: repeat-x;
-  animation: defilementNuage 60s linear infinite;
-  opacity: 0.15;
-  z-index: 0;
+  width: 100%;
+  z-index: -1;
 }
 
-@keyframes defilementNuage {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-66.6%); }
-}
-
-/* CONTENU CENTRAL */
+/* Contenu parfaitement centré */
 .contenu {
-  position: relative;
-  z-index: 1;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 40px 60px;
-  border-radius: 18px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  max-width: 600px;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
 }
 
-/* TITRE */
-h1 {
-  font-size: 2.7rem;
-  color: #3a0ca3;
+/* Image (logo ou autre) stylisée */
+.contenu img {
+  max-width: 200px;
   margin-bottom: 20px;
 }
 
-/* PARAGRAPHE */
-p {
-  font-size: 1.2rem;
-  color: #444;
-}
-
-/* IMAGE ANIMÉE */
-.logo-animé {
-  width: 100px;
-  margin-bottom: 25px;
-  animation: rotation 12s linear infinite;
-}
-
-@keyframes rotation {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
 
 
 
